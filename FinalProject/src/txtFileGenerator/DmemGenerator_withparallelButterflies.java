@@ -37,7 +37,7 @@ public class DmemGenerator_withparallelButterflies {
 	int count;
 	int caseVariable=1;
 	public void caseStatementGenerator() throws IOException{
-		BufferedWriter writer = new BufferedWriter(new FileWriter("caseOutput.v"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("gen/caseOutput.v"));
 		printHardCodeStatements(writer);		
 		printDefaultCaseStatements(writer);
 		for (int currentStage = 0; currentStage < numberOfStages; currentStage++) {
