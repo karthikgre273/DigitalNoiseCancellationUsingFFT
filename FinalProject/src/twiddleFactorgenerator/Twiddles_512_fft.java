@@ -1,4 +1,4 @@
-package txtFileGenerator;
+package twiddleFactorgenerator;
 public class Twiddles_512_fft {
 	public static double generate(boolean imag,int currentStage, int level){
 		switch (currentStage){

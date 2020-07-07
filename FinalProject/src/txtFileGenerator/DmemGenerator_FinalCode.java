@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 
+import twiddleFactorgenerator.Twiddles_512_old;
+
 public class DmemGenerator_FinalCode {
 	double pi=3.14;
 	//256 bits

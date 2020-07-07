@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 
+import twiddleFactorgenerator.Twiddles_256;
+import twiddleFactorgenerator.Twiddles_512_ifft;
+
 public class DmemGenerator_FinalCode_WithRealCalculations_ifft {
 	double pi=3.14;
 	//256 bits

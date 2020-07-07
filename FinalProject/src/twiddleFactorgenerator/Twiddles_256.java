@@ -1,4 +1,4 @@
-package txtFileGenerator;
+package twiddleFactorgenerator;
 
 public class Twiddles_256 {
 

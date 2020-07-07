@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 
+import twiddleFactorgenerator.Twiddles_256;
+
 public class DmemGenerator_withparallelButterflies {
 	double pi=3.14;
 	//256 bits
