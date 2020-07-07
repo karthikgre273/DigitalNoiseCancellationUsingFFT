@@ -1,4 +1,4 @@
-package txtFileGenerator;
+package twiddleFactorgenerator;
 
 public class matlabCodeForTwiddleFactorGenerator {
 
