@@ -1,9 +1,9 @@
-package txtFileGenerator;
+package twiddleFactorgenerator;
 
 import java.io.IOException;
 import java.text.ParseException;
 
-public class TwiddleFactorGeneratorTool {
+public class TwiddleFactorGeneratorTool_realValues {
 	double pi=3.14;
 
 
@@ -13,7 +13,7 @@ public class TwiddleFactorGeneratorTool {
 
 	// int n=2;
 	public static void main(String[] args) throws ParseException, IOException {
-		TwiddleFactorGeneratorTool obj=new TwiddleFactorGeneratorTool();
+		TwiddleFactorGeneratorTool_realValues obj=new TwiddleFactorGeneratorTool_realValues();
 		obj.caseStatementGenerator();
 	}
 
@@ -21,6 +21,10 @@ public class TwiddleFactorGeneratorTool {
 	int count;
 	int caseVariable=1;
 	public void caseStatementGenerator() throws IOException{
+		System.out.println("package txtFileGenerator;\n\n"
+				+ "public class Twiddles_512 {\n"
+				+ "\tpublic static double generate(boolean imag,int currentStage, int level){\n"
+				+ "\t\tswitch (currentStage){"); 
 
 		for (int stage = 0; stage < numberOfStages; stage++) {
 			int currentStage;
@@ -29,8 +33,8 @@ public class TwiddleFactorGeneratorTool {
 //				continue;
 //
 //			}
-			System.out.println("case "+stage+":");
-			System.out.println("\tswitch(level){");
+			System.out.println("\t\t\tcase "+stage+":");
+			System.out.println("\t\t\t\tswitch(level){");
 			currentStage=stage;stage0flag=false;
 			//System.out.println(Npoint/Math.pow ( 2, (currentStage+1)));
 			//			for(int p=0; p<Npoint/Math.pow ( 2, (currentStage+1));p++){
@@ -42,26 +46,30 @@ public class TwiddleFactorGeneratorTool {
 				//int input1=firstVariable+q;
 				//int input2=firstVariable+q+(int)Math.pow ( 2, (currentStage));		
 				//					System.out.println("("+input1+","+input2+") ::stage =  "+stage);
-				System.out.print("\t\tcase "+q+":");
-				int real=twiddleFactorComputation(false,currentStage,q);
-				int imag=twiddleFactorComputation(true,currentStage,q);
+				System.out.print("\t\t\t\t\tcase "+q+":");
+				double real=twiddleFactorComputation(false,currentStage,q);
+				double imag=twiddleFactorComputation(true,currentStage,q);
 				//System.out.println(real+"+j"+imag+"\t\t\tstage =  "+stage);
 
 				System.out.println("if(!imag) return "+(real)+";");
-				System.out.println("\t\t\telse return "+(imag)+";");
+				System.out.println("\t\t\t\t\t\telse return "+(imag)+";");
 
 
 				//				}
 			}
-			System.out.println("}");
+			System.out.println("\t\t\t\t}");
 		}
+		System.out.println("\t\t\t}");
+		System.out.println("\t\treturn 0;");
+		System.out.println("\t}");
+		System.out.println("}");
 	}
 
 
 
-	public int twiddleFactorComputation(boolean complexValue,int currentStage, int  k){
-		int real;
-		int imag;
+	public double twiddleFactorComputation(boolean complexValue,int currentStage, int  k){
+		double real;
+		double imag;
 		//		if(stage0flag){
 		//			real=(Math.pow(2, 20));
 		//			imag=0;
@@ -69,9 +77,9 @@ public class TwiddleFactorGeneratorTool {
 		//		DecimalFormat f = new DecimalFormat(".###");
 		//		else{
 
-		int n=(int) (k * (Math.pow(2, numberOfStages-1-currentStage)));
-		real=(int)(Math.cos(2*pi*n/Npoint)*Math.pow(2, 20));
-		imag=-(int)(Math.sin(2*pi*n/Npoint)*Math.pow(2, 20));
+		double n=k * (Math.pow(2, numberOfStages-1-currentStage));
+		real=(Math.cos(2*pi*n/Npoint));
+		imag=-(Math.sin(2*pi*n/Npoint));
 
 
 		//			real=Math.cos(pi*k/Math.pow(2, currentStage));
@@ -81,7 +89,7 @@ public class TwiddleFactorGeneratorTool {
 		//		String imagFormated=f.format(imag);
 		if(complexValue)return imag;
 		else {
-			if(real==835) return 0;
+			if(real==7.963267107332633E-4) return 0.0;
 			else return real;
 		}
 	}	

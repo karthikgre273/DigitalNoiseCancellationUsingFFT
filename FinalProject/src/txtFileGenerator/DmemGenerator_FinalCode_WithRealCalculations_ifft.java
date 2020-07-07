@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 
+import twiddleFactorgenerator.Twiddles_256;
+import twiddleFactorgenerator.Twiddles_512_ifft;
+
 public class DmemGenerator_FinalCode_WithRealCalculations_ifft {
 	double pi=3.14;
 	//256 bits
@@ -40,7 +43,7 @@ public class DmemGenerator_FinalCode_WithRealCalculations_ifft {
 	int caseVariable=1;
 	//boolean stage0flag;
 	public void caseStatementGenerator() throws IOException{
-		BufferedWriter writer = new BufferedWriter(new FileWriter("ifftCalculator.v"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("gen/ifftCalculator.v"));
 		printHardCodeStatements(writer);		
 		printDefaultCaseStatements(writer);
 		for (int tstage = 0; tstage < numberOfStages; tstage++) {

@@ -36,7 +36,7 @@ public class DmemGenerator {
 
 	public void caseStatementGenerator() throws IOException{
 		int caseVariable=1;
-		 BufferedWriter writer = new BufferedWriter(new FileWriter("caseOutput.v"));
+		 BufferedWriter writer = new BufferedWriter(new FileWriter("gen/caseOutput.v"));
 		 printHardCodeStatements(writer);		
 		 printDefaultCaseStatements(writer);
 		for (int stage = 0; stage < numberOfStages; stage++) {

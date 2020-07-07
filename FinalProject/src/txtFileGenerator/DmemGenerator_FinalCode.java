@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 
+import twiddleFactorgenerator.Twiddles_512_old;
+
 public class DmemGenerator_FinalCode {
 	double pi=3.14;
 	//256 bits
@@ -39,7 +41,7 @@ public class DmemGenerator_FinalCode {
 	int caseVariable=1;
 	boolean stage0flag;
 	public void caseStatementGenerator() throws IOException{
-		BufferedWriter writer = new BufferedWriter(new FileWriter("caseOutput.v"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("gen/caseOutput.v"));
 		printHardCodeStatements(writer);		
 		printDefaultCaseStatements(writer);
 		for (int stage = 0; stage < numberOfStages; stage++) {
