@@ -1,4 +1,4 @@
-package txtFileGenerator;
+package dmemGenerator;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

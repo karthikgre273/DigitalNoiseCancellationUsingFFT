@@ -1,4 +1,4 @@
-package txtFileGenerator;
+package Tools;
 
 public class floatToBinary {
 
